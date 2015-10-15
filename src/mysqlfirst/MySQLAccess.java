@@ -54,6 +54,18 @@ public class MySQLAccess {
 
     }
 
+    public void TryGetQuery(String query) {
+        try {
+            statement = connect.createStatement();
+            resultSet = statement.executeQuery(query);
+            writeResultSet(resultSet);
+        }
+        catch (Exception e) {
+            System.out.println("ERROR EXECUTING QUERY!! " + e.toString() + e.getMessage());
+        }
+
+    }
+
     private void writeResultSet(ResultSet resultSet) throws SQLException {
         // ResultSet is initially before the first data set
         while (resultSet.next()) {

@@ -3,6 +3,7 @@
  */
 import mysqlfirst.MySQLAccess;
 
+
 public class Main {
 
     public static void main(String [] args)
@@ -11,6 +12,7 @@ public class Main {
 
         access.TryUpdateQuery("insert into Seasons value (2014)");
         access.TryUpdateQuery("insert into Seasons value (2014)");
+        access.TryGetQuery("select distinct * from Seasons");
         access.TestingQuery();
 
     }
