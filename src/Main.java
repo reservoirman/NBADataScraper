@@ -25,7 +25,7 @@ public class Main {
         access.TestingQuery();
 
 
-        String[] years = {"2012", "2013", "2015"};
+        String[] years = {"2011", "2012", "2013", "2014", "2015"};
 
         for (String year: years) {
             Scanner scan;
@@ -39,7 +39,7 @@ public class Main {
                 return;
             }
             String row, home, away;
-
+/*
             for (int i = 0; i < 500; i++) {
                 row = scan.nextLine();
 
@@ -66,7 +66,7 @@ public class Main {
                 //2nd inserting belongsTo to get all the team names
                 access.TryUpdateQuery("insert into BelongsTo values (" + fields[3] + ", " + year + ", " + fields[5] + ", " + fields[4] + ")");
             }
-
+*/
             //3rd
             try {
                 scan = new Scanner(new File("NBA gamelog " + year + ".csv"));
@@ -76,10 +76,14 @@ public class Main {
                 System.out.println("Can't find file!  Please check the name and try again.");
                 return;
             }
-            for (int i = 0; i < 120; i++) {
+            while(scan.hasNextLine()) {
                 row = scan.nextLine();
 
                 String[] fields = row.split(",");
+
+                //1st inserting players
+                access.TryUpdateQuery("insert into Players values (" + fields[1] + ", " + fields[2] + ", NULL, NULL)");
+
                 //3rd inserting Games
                 if (fields[7].contains("vs")) {
                     home = fields[3];

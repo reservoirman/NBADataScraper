@@ -46,13 +46,13 @@ public class MySQLAccess {
 
     public void TryUpdateQuery(String query)
     {
-        System.out.println(query);
+        //System.out.println(query);
         try {
             statement = connect.createStatement();
             int result = statement.executeUpdate(query);
         }
         catch (Exception e) {
-            System.out.println("ERROR EXECUTING QUERY!!\n" + e.toString() + '\n');
+            //System.out.println("ERROR EXECUTING QUERY!!\n" + e.toString() + '\n');
         }
 
     }
