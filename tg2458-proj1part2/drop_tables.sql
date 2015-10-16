@@ -1,5 +1,5 @@
 drop table FlagrantFouls;
-drop table TechFouls;
+drop table Ejections;
 drop table BelongsTo;
 drop table DidNotPlay;
 drop table IndPerf;
