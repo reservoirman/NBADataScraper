@@ -30,6 +30,8 @@ public class MySQLAccess {
         }
     }
 
+
+
     public void TestingQuery()
     {
         try {
@@ -44,6 +46,7 @@ public class MySQLAccess {
 
     public void TryUpdateQuery(String query)
     {
+        System.out.println(query);
         try {
             statement = connect.createStatement();
             int result = statement.executeUpdate(query);
@@ -54,16 +57,19 @@ public class MySQLAccess {
 
     }
 
-    public void TryGetQuery(String query) {
+    public String TryGetQuery(String query, String field) {
+        String result = null;
         try {
             statement = connect.createStatement();
             resultSet = statement.executeQuery(query);
-            writeResultSet(resultSet);
+            resultSet.next();
+            result = resultSet.getString(field);
+            System.out.println(result);
         }
         catch (Exception e) {
             System.out.println("ERROR EXECUTING QUERY!! " + e.toString() + e.getMessage());
         }
-
+        return result;
     }
 
     private void writeResultSet(ResultSet resultSet) throws SQLException {
