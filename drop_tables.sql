@@ -1,0 +1,10 @@
+drop table FlagrantFouls;
+drop table Ejections;
+drop table BelongsTo;
+drop table DidNotPlay;
+drop table IndPerf;
+drop table Games;
+drop table PlaysAt;
+drop table Teams;
+drop table Seasons;
+drop Table Players;
