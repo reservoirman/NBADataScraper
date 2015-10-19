@@ -40,7 +40,7 @@ public class MySQLAccess {
             writeResultSet(resultSet);
         }
         catch (Exception e) {
-            System.out.println("ERROR EXECUTING QUERY!! " + e.toString() + e.getMessage());
+            System.out.println("ERROR EXECUTING QUERY!! " + e.toString());
         }
     }
 
@@ -64,10 +64,11 @@ public class MySQLAccess {
             resultSet = statement.executeQuery(query);
             resultSet.next();
             result = resultSet.getString(field);
-            System.out.println(result);
+            //System.out.println(result);
         }
         catch (Exception e) {
-            System.out.println("ERROR EXECUTING QUERY!! " + e.toString() + e.getMessage());
+            System.out.println("ERROR EXECUTING QUERY!! " + e.toString());
+            System.out.println(query);
         }
         return result;
     }
