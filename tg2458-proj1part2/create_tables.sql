@@ -1,8 +1,8 @@
-CREATE TABLE Players (
+﻿CREATE TABLE Players (
  PID INTEGER,
  PlayerName CHAR(40) NOT NULL,
  DOB DATE,
- POSITION CHAR(8),
+ POSITION CHAR(20),
  PRIMARY KEY (PID));
 
 #attribute-based check: Earliest NBA season was the 1946-1947 season  
